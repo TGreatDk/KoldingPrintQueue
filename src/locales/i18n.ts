@@ -23,8 +23,8 @@ export const translations: ConvertedToObjectType<TranslationResource> = {} as an
  * This is helpful when using the JSON file keys and still have the intellisense support
  * along with type-safety
  */
-const convertLanguageJsonToObject = (obj: any, dict: {}, current?: string) => {
-  Object.keys(obj).forEach(key => {
+const convertLanguageJsonToObject = (obj: any, dict: any, current?: string) => {
+  Object.keys(obj).forEach((key: any) => {
     const currentLookupKey = current ? `${current}.${key}` : key;
     if (typeof obj[key] === 'object') {
       dict[key] = {};
